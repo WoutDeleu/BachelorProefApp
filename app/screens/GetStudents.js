@@ -1,12 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StackNavigator } from "react-navigation";
+import { View, Text, Button } from "react-native";
+improt
 
-function GetStudents({navigation}) {
-    return (
+function GetStudents({route, navigation}) {
+  const { id } = route.params;
+  
+  return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text>id: {JSON.stringify(id)}</Text>
       </View>
-    );
-  }
+  );
+}
 export default GetStudents;
