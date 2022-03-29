@@ -8,9 +8,10 @@ function HomeScreen ({navigation}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <TextInput
         placeholder="UserId"
+        keyboardType='numeric'
         onChange={(value)=>setId(value.nativeEvent.text)}
       />
-      <Text>student_id: {id}</Text>
+      <Text>student_id: {Number(id)}</Text>
 
       <Button 
         title="GetStudent" 
@@ -27,7 +28,7 @@ function HomeScreen ({navigation}) {
           /* 1. Navigate to the Details route with params */
           navigation.navigate('DetailsScreen', {
             itemId: 86,
-            otherParam: 'anything you want here',
+            otherParam: {id},
           });
         }}
       />
