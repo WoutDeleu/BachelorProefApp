@@ -7,8 +7,8 @@ import AuthStack from './app/routes/AuthStack';
 
 
 
-export default class App extends React.Component {
-  render() {  
+class App extends React.Component {
+  render() {
     return (
       <NavigationContainer>
           <AuthStack/>

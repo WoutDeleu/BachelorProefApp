@@ -16,7 +16,7 @@ function HomeScreen ({navigation}) {
       <Button 
         title="GetStudent" 
         onPress={()=>{
-          navigation.navigate('GetStudents', {studentId: {id}});
+          navigation.navigate('GetStudents', {studentId: Number(id) });
         }}
       />
 

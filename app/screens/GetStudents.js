@@ -11,22 +11,18 @@ function GetStudents({route, navigation}) {
   const baseUrl = Platform.OS === 'android' ? 'http://10.0.2.2' : 'http://localhost';
 
   const [users, setUsers] = useState("");
-  
+
     const getUsers = async () => {
-        /*
-        axios
-            .get("http://192.168.163.1:8081/userManagement/users")
-            .then((response) => {
-                console.log(response.json);
-            });
-        */
         var axios = require('axios');
+        var base = 'http://192.168.20.181:8081/userManagement/users/';
+        var url_user =  base + route.params.studentId;
+        console.log(url_user);
 
         var config = {
             method: 'get',
-            url: 'http://localhost:8081/userManagement/users',
+            url: url_user,
             headers: {
-                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBrdWxldXZlbi5iZSIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgxL2F1dGhlbnRpY2F0aW9uL2xvZ2luIiwiZXhwIjoxNjQ2NTExNjAxfQ.iaDXu5-pODnaMYBDLfvOVw61RZ5PPjOnSyCiocEZltA'
+                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YW5uZXMudmVybWVpcmVuQHN0dWRlbnQua3VsZXV2ZW4uYmUiLCJyb2xlcyI6WyJST0xFX1NUVURFTlQiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgxL2F1dGhlbnRpY2F0aW9uL2xvZ2luIiwiZXhwIjoxNjQ2NzQ4NzgxfQ.l3RuXUuYXaBFqohQw5jaUZGArvexrRzgT3tCG-oycQc'
             }
         };
 
@@ -39,36 +35,6 @@ function GetStudents({route, navigation}) {
             });
 
     };
-/*
-    var axios = require('axios');
-
-    var config = {
-        method: 'get',
-        url: 'http://localhost:8081/userManagement/users',
-        headers: {
-            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBrdWxldXZlbi5iZSIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgxL2F1dGhlbnRpY2F0aW9uL2xvZ2luIiwiZXhwIjoxNjQ2NTExNjAxfQ.iaDXu5-pODnaMYBDLfvOVw61RZ5PPjOnSyCiocEZltA'
-        }
-    };
-
-    axios(config)
-        .then(function (response) {
-            console.log(JSON.stringify(response.data));
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-*/
-    // axios({ method: 'get', url: '${baseURL}/users/1' }).then((response) => {
-  //   console.log(response.data)
-  // });
-
-  // const getUsers = () => {
-  //   fetch('http://localhost:8081/userManagement/users')
-  //   .then((response) => response.json())
-  //   .then((responseJson) => {
-  //     console.log(responseJson);
-  // })
-  // }
 
 
   return (
